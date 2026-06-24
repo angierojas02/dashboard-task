@@ -8,8 +8,12 @@ POST http://localhost:1234/tasks
 content-type: application/json
 
 {
-    "title": "Hacer la tarea de simulación",
-    "description": "Hacer la tarea de Montecarlo",
+    "title": "Hacer la tarea de técnica",
+    "description": "Hacer la tarea de calidad",
     "priority": "Baja",
     "status": "Pendiente"
 }
+
+###
+
+DELETE http://localhost:1234/tasks/8eab6ecc-f7a0-4b14-b34b-ab402988947c
