@@ -1,0 +1,15 @@
+GET http://localhost:1234/tasks
+###
+
+GET http://localhost:1234/tasks/012-345
+
+###
+POST http://localhost:1234/tasks
+content-type: application/json
+
+{
+    "title": "Hacer la tarea de simulación",
+    "description": "Hacer la tarea de Montecarlo",
+    "priority": "Baja",
+    "status": "Pendiente"
+}
