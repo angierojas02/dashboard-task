@@ -11,6 +11,13 @@ export let tasks = [
         title: "Estudiar",
         description: "Estudiar para los examenes parciales",
         priority: "Alta",
+        status: "En proceso"
+    },
+    {
+        id: "795-456",
+        title: "Preparar un pastel",
+        description: "Para la feria pedagogica, preparar un pastel de chocolate",
+        priority: "Media",
         status: "Completada"
     }
 ]
