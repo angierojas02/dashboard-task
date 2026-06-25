@@ -9,8 +9,8 @@ function App() {
     const viewTasks = async () => {
       try {
 
-        const response = await fetch('http://localhost:1234/tasks')
-        const resultTask = await response.json()
+        const res = await fetch('http://localhost:1234/tasks')
+        const resultTask = await res.json()
 
         setTask(resultTask)
       } catch (error) {
@@ -20,6 +20,22 @@ function App() {
     }
     viewTasks()
   },[])
+
+  const deleteTask = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:1234/tasks/${id}`, {
+        method: 'DELETE'
+      })
+
+      if (response.ok) {
+        const updateTasks = task.filter(tsk => tsk.id !== id)
+        setTask(updateTasks)
+      }
+
+    } catch (error) {
+       console.error("Hubo un error al eliminar tarea", error)
+    }
+  }
 
 
   return (
@@ -32,6 +48,7 @@ function App() {
           .map(tsk => (
             <Target key={tsk.id}
             {...tsk}
+            onDelete={deleteTask}
             />
           ))}
         </div>
@@ -43,6 +60,7 @@ function App() {
           .map(tsk => (
             <Target key={tsk.id}
             {...tsk}
+            onDelete={deleteTask}
             />
           ))}
         </div>
@@ -54,6 +72,7 @@ function App() {
             .map(tsk => (
               <Target key={tsk.id}
               {...tsk}
+              onDelete={deleteTask}
               />
             ))}
         </div>
