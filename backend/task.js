@@ -19,5 +19,12 @@ export let tasks = [
         description: "Para la feria pedagogica, preparar un pastel de chocolate",
         priority: "Media",
         status: "Completada"
+    },
+     {
+        id: "192-123",
+        title: "Preparar postres",
+        description: "Preparar postres para la merienda",
+        priority: "Baja",
+        status: "En proceso"
     }
 ]
