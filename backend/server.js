@@ -1,9 +1,11 @@
 import express from 'express'
 import { tasks } from './task.js'
 import crypto from 'crypto'
+import cors from 'cors'
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 const PORT = process.env.PORT ?? 1234
 
