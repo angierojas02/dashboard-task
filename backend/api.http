@@ -17,3 +17,12 @@ content-type: application/json
 ###
 
 DELETE http://localhost:1234/tasks/8eab6ecc-f7a0-4b14-b34b-ab402988947c
+
+###
+
+PATCH  http://localhost:1234/tasks/012-345
+content-type: application/json
+
+{
+    "status": "Pendiente"
+}
