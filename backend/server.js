@@ -53,6 +53,20 @@ app.delete('/tasks/:id', (req, res) => {
     res.status(200).json({ mensaje: "ELEMENTO BORRADO CON ÉXITO "})
 })
 
+app.patch ('/tasks/:id', (req, res) => {
+    const { id } = req.params
+    const indice = tasks.findIndex(tsk => tsk.id === id)
+
+    if (indice === -1) {
+        return res.status(404).json({ mensaje: "NO SE ENCONTRÓ LA TAREA"})
+    }
+    
+    const { status } = req.body
+    tasks[indice].status = status
+    return res.json(tasks[indice])
+
+    
+})
 
 app.listen(PORT, () => {
     console.log(`SERVER LISTENING PORT http://localhost:${PORT}`)
